@@ -1,0 +1,25 @@
+name: r_env
+
+channels:
+  - defaults
+  - conda-forge
+  - r
+
+dependencies:
+  # packages so that jupyter works
+  - jupyterlab
+  - nb_conda_kernels
+  
+  # running R in jupyter
+  - r-irkernel
+  - r-irdisplay
+  - r-essentials
+  - r-base
+
+  # packages you are using in R
+  - r-tidyverse
+  - r-haven
+  - r-sandwich
+  - r-stargazer
+  - r-magrittr
+  - r-xtable
