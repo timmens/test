@@ -14,10 +14,10 @@ jobs:
            activate-environment: r_env
            environment-file: environment.yml
            python-version: 3.6
-           auto-activate-base: false
+           auto-activate-base: true
     - name: execute notebooks
       shell: bash -l {0}
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
-        source .envrc
-        jupyter nbconvert --to html --execute --ExecutePreprocessor.timeout=120 *.ipynb
+        conda activate r_env
+        jupyter nbconvert --execute  *.ipynb
